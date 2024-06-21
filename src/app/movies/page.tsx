@@ -7,7 +7,7 @@ import MovieList from '../components/MovieList';
 const apiKey = "20e0eff7"
 
 const fetchData = async (searchTerm: string, page: number = 1) => {
-  const url = `http://www.omdbapi.com/?s=${encodeURIComponent(searchTerm)}&page=${page}&apikey=${apiKey}`;
+  const url = `https://www.omdbapi.com/?s=${encodeURIComponent(searchTerm)}&page=${page}&apikey=${apiKey}`;
   try {
     const response = await axios.get(url);
     if (response.data.Response === 'True') {
@@ -49,7 +49,7 @@ const Movies: React.FC = () => {
 
     fetchAllData();
   }, []);
-  console.log("alldata",allData)
+  // console.log("alldata",allData)
   return (
     <div className="min-h-screen flex flex-col items-left justify-left bg-gray-900 text-white lg:p-20 md:p-16 p-10">
       <div className='mt-6'>
